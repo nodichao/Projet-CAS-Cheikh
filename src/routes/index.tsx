@@ -7,7 +7,7 @@ import { Header } from "@/components/site/Header";
 import { Reveal } from "@/components/site/Reveal";
 import { ContactForm } from "@/components/site/ContactForm";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
-import { ACTIVITIES, EMAIL, LOCATION, NAV, PHONES, SLOGAN, waLink } from "@/lib/contact";
+import { ACTIVITIES, ADDRESS, EMAIL, MAP_EMBED, NAV, NINEA, PHONES, RCCM, SLOGAN, WHATSAPP_DISPLAY, waLink } from "@/lib/contact";
 
 const TITLE = "Corporate African Solutions (CAS) — Commerce international, Dakar";
 const DESC =
@@ -222,8 +222,10 @@ function Index() {
                   </li>
                 ))}
                 <li><a href={`mailto:${EMAIL}`} className="flex items-center gap-3 break-all hover:text-gold"><Mail className="h-4 w-4 shrink-0 text-gold" /> {EMAIL}</a></li>
-                <li className="flex items-center gap-3"><MapPin className="h-4 w-4 text-gold" /> {LOCATION}</li>
+                <li><a href={waLink()} {...ext} className="flex items-center gap-3 hover:text-gold"><WhatsAppIcon className="h-4 w-4 text-gold" /> WhatsApp : {WHATSAPP_DISPLAY}</a></li>
+                <li className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" /> {ADDRESS}</li>
               </ul>
+              <iframe title="Localisation de Corporate African Solutions" src={MAP_EMBED} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="mt-8 h-64 w-full border border-border" />
             </Reveal>
             <Reveal className="lg:col-span-7" delay={100}>
               <ContactForm />
@@ -239,6 +241,7 @@ function Index() {
             <div className="h-24 w-48 overflow-hidden bg-card">
               <img src={logo.url} alt="Logo Corporate African Solutions" loading="lazy" className="h-full w-full scale-[1.9] object-contain" />
             </div>
+            <p className="mt-4 text-xs text-ink-foreground/75">NINEA : {NINEA}<br />RCCM : {RCCM}</p>
             <p className="mt-5 font-display text-lg font-light">{SLOGAN}</p>
           </div>
           <div>
@@ -258,7 +261,8 @@ function Index() {
             <ul className="mt-5 space-y-2 text-sm text-ink-foreground/75">
               {PHONES.map((p) => <li key={p}><a href={`tel:${p.replace(/\s/g, "")}`} className="hover:text-gold">{p}</a></li>)}
               <li><a href={`mailto:${EMAIL}`} className="break-all hover:text-gold">{EMAIL}</a></li>
-              <li>{LOCATION}</li>
+              <li><a href={waLink()} {...ext} className="hover:text-gold">WhatsApp : {WHATSAPP_DISPLAY}</a></li>
+              <li>{ADDRESS}</li>
             </ul>
             <a href={waLink()} {...ext} className="mt-6 inline-flex items-center gap-2 bg-whatsapp px-5 py-3 text-sm font-semibold text-whatsapp-foreground">
               <WhatsAppIcon className="h-4 w-4" /> WhatsApp
