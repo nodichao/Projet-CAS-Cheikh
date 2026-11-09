@@ -74,7 +74,7 @@ export function ContactForm() {
   );
 }
 
-function F({ name, label, type = "text", optional, error }: { name: keyof Data; label: string; type?: string; optional?: boolean; error?: string }) {
+function F({ name, label, type = "text", optional, error }: { name: keyof Data; label: string; type?: string; optional?: boolean; error?: string | undefined }) {
   return (
     <label className="block">
       <span className="mb-2 block text-xs font-semibold uppercase tracking-wider">
