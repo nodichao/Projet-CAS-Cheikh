@@ -1,4 +1,9 @@
-export const WHATSAPP_NUMBER = "221777494711";
+export const WHATSAPP_NUMBER = "8613066385082";
+export const WHATSAPP_DISPLAY = "+86 130 6638 5082";
+export const ADDRESS = "Guédiawaye, Golf Nord, Cité SHS, Villa N°287, Dakar (Sénégal)";
+export const MAP_EMBED = `https://www.google.com/maps?q=${encodeURIComponent("Cité SHS Golf Nord Guédiawaye Dakar Sénégal")}&output=embed`;
+export const NINEA = "013469631";
+export const RCCM = "SN DKR 2026 B 40856";
 export const DEFAULT_WA_MESSAGE =
   "Bonjour Corporate African Solutions, je souhaite obtenir davantage d'informations sur vos activités et vos opportunités de partenariat.";
 
