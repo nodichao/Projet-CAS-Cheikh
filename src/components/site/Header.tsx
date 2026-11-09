@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { NAV, waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 
-const logo = "/favicon.png";
+const logo = `${import.meta.env.BASE_URL}favicon.png`;
 
 export function Header() {
   const [open, setOpen] = useState(false);

@@ -8,7 +8,7 @@ import { ContactForm } from "@/components/site/ContactForm";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { ACTIVITIES, ADDRESS, EMAIL, MAP_EMBED, NAV, NINEA, PHONES, RCCM, SLOGAN, WHATSAPP_DISPLAY, waLink } from "@/lib/contact";
 
-const logo = "/favicon.png";
+const logo = `${import.meta.env.BASE_URL}favicon.png`;
 
 const TITLE = "Corporate African Solutions (CAS) — Commerce international, Dakar";
 const DESC =
