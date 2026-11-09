@@ -56,22 +56,12 @@ export function ContactForm() {
     );
   }
 
-  const F = ({ name, label, type = "text", optional }: { name: keyof Data; label: string; type?: string; optional?: boolean }) => (
-    <label className="block">
-      <span className="mb-2 block text-xs font-semibold uppercase tracking-wider">
-        {label} {optional && <span className="font-normal normal-case text-muted-foreground">(facultatif)</span>}
-      </span>
-      <input name={name} type={type} className={field} aria-invalid={!!errors[name]} />
-      {errors[name] && <span className="mt-1 block text-xs text-destructive">{errors[name]}</span>}
-    </label>
-  );
-
   return (
     <form onSubmit={submit} noValidate className="grid gap-5 bg-card p-8 sm:grid-cols-2">
-      <F name="name" label="Nom" />
-      <F name="company" label="Entreprise" optional />
-      <F name="email" label="Adresse email" type="email" />
-      <F name="subject" label="Sujet de la demande" />
+      <F name="name" label="Nom" error={errors.name} />
+      <F name="company" label="Entreprise" optional error={errors.company} />
+      <F name="email" label="Adresse email" type="email" error={errors.email} />
+      <F name="subject" label="Sujet de la demande" error={errors.subject} />
       <label className="block sm:col-span-2">
         <span className="mb-2 block text-xs font-semibold uppercase tracking-wider">Message</span>
         <textarea name="message" rows={5} className={field} aria-invalid={!!errors.message} />
@@ -81,5 +71,17 @@ export function ContactForm() {
         Envoyer le message
       </button>
     </form>
+  );
+}
+
+function F({ name, label, type = "text", optional, error }: { name: keyof Data; label: string; type?: string; optional?: boolean; error?: string }) {
+  return (
+    <label className="block">
+      <span className="mb-2 block text-xs font-semibold uppercase tracking-wider">
+        {label} {optional && <span className="font-normal normal-case text-muted-foreground">(facultatif)</span>}
+      </span>
+      <input name={name} type={type} className={field} aria-invalid={!!error} />
+      {error && <span className="mt-1 block text-xs text-destructive">{error}</span>}
+    </label>
   );
 }
