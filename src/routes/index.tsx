@@ -2,12 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import hero from "@/assets/hero-port-dakar.jpg";
 import meeting from "@/assets/partnership-meeting.jpg";
-import logo from "@/assets/cas-logo.jpeg.asset.json";
 import { Header } from "@/components/site/Header";
 import { Reveal } from "@/components/site/Reveal";
 import { ContactForm } from "@/components/site/ContactForm";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { ACTIVITIES, ADDRESS, EMAIL, MAP_EMBED, NAV, NINEA, PHONES, RCCM, SLOGAN, WHATSAPP_DISPLAY, waLink } from "@/lib/contact";
+
+const logo = "/favicon.png";
 
 const TITLE = "Corporate African Solutions (CAS) — Commerce international, Dakar";
 const DESC =
@@ -239,7 +240,7 @@ function Index() {
         <div className="mx-auto grid max-w-7xl gap-12 px-5 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
           <div>
             <div className="h-24 w-48 overflow-hidden bg-card">
-              <img src={logo.url} alt="Logo Corporate African Solutions" loading="lazy" className="h-full w-full scale-[1.9] object-contain" />
+              <img src={logo} alt="Logo Corporate African Solutions" loading="lazy" className="h-full w-full scale-[1.9] object-contain" />
             </div>
             <p className="mt-4 text-xs text-ink-foreground/75">NINEA : {NINEA}<br />RCCM : {RCCM}</p>
             <p className="mt-5 font-display text-lg font-light">{SLOGAN}</p>
